@@ -1,0 +1,80 @@
+.wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  --icon-offset: 16px;
+}
+
+.wrapperBordered {
+  --icon-offset: 20px;
+}
+
+.label {
+  font-family: var(--third-family);
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 150%;
+  color: $typo-label;
+  margin-bottom: 6px;
+}
+
+.inputWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+// Базовые стили для обоих типов
+.input {
+  width: 100%;
+  font-family: var(--third-family);
+  font-weight: 500;
+  font-size: 18px;
+  outline: none;
+  box-sizing: border-box;
+
+  &.bordered {
+    border: 1.5px solid #ededed;
+    border-radius: 12px;
+    padding: 14px 16px;
+  }
+
+  &.filled {
+    background: #f3f3f3;
+    border-radius: 8px;
+    padding: 12px 20px;
+    border: none;
+  }
+
+  &.withLeftIcon {
+    padding-left: 54px;
+  }
+  &.withRightIcon {
+    padding-right: 54px;
+  }
+}
+
+.iconWrapper {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+}
+
+.iconWrapperLeft {
+  left: var(--icon-offset);
+}
+
+.iconWrapperRight {
+  right: var(--icon-offset);
+}
+
+.error {
+  margin-top: 4px;
+  font-size: 16px;
+  color: #9c9c9c;
+}
