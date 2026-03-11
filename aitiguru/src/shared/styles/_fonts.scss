@@ -1,0 +1,23 @@
+@font-face {
+  font-family: 'Inter';
+  src: url('../assets/fonts/Inter.woff2') format('woff2-variations');
+  font-weight: 600 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Cairo';
+  src: url('../assets/fonts/Cairo.woff2') format('woff2-variations');
+  font-weight: 700 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  src: url('../assets/fonts/OpenSans.woff2') format('woff2-variations');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
