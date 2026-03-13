@@ -30,7 +30,7 @@ export default defineConfig({
   css: {
     preprocessorOptions: {
       scss: {
-        additionalData: `@use "@/shared/styles/config" as *;`,
+        additionalData: `@use "@shared/styles/config" as *;`,
       },
     },
   },
