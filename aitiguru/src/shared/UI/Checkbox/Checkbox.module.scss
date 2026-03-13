@@ -1,0 +1,33 @@
+.wrapper {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  font-family: var(--third-family);
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 150%;
+  color: $typo-label-secondary;
+
+  input {
+    appearance: none;
+    width: 24px;
+    height: 24px;
+    border: 2px solid #ccc; // Цвет рамки в выключенном состоянии
+    border-radius: 4px;
+    margin-right: 12px;
+    display: grid;
+    place-content: center;
+    transition: 0.2s;
+
+    &:checked {
+      background-color: #007bff; // Цвет фона при активации
+      border-color: #007bff;
+
+      &::before {
+        content: '✓';
+        color: white;
+        font-size: 16px;
+      }
+    }
+  }
+}
