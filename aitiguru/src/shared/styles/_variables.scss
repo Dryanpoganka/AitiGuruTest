@@ -1,7 +1,7 @@
 :root {
   --font-family: 'Cairo', sans-serif;
   --second-family: 'Open Sans', sans-serif;
-  --third-family: 'Inter', sans-serif;
+  --third-family: 'Inter Web', sans-serif;
 
   --clr-white: #ffffff; // Чистый белый (фон, текст кнопок)
   --clr-gray-100: #f6f6f6; // Акцент в состоянии disabled
@@ -24,4 +24,6 @@
   --clr-red-500: #f11010; // Ошибка / Низкая оценка
   --clr-black: #000000; // Продавец, артикул, оценка
   --clr-btn-text: #ebf3ea;
+
+  --clr-blue: #242edb;
 }

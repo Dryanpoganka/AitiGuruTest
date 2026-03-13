@@ -28,6 +28,7 @@ $typo-label: var(--clr-dark-200); // Лейблы инпутов
 $typo-label-secondary: var(--clr-gray-600); // Лейбл чекбокса
 $typo-text-secondary: var(--clr-gray-900); // Текст рядом с акцентом
 $typo-placeholder: var(--clr-gray-600); // Плейсхолдеры / Иконки (глаз, крестик)
+$typo-or: var(--clr-gray-200);
 
 // Typography - Admin Table
 $typo-table-head: var(--clr-gray-500); // Заголовки колонок
@@ -50,3 +51,5 @@ $color-btn-alt: var(--clr-btn-text); // Текст кнопки (админка)
 $border-main: var(--clr-gray-300); // Общие бордеры
 $border-input: var(--clr-gray-200); // Бордеры инпутов / чекбоксов
 $separator-line: var(--clr-gray-200);
+
+$accent-color: var(--clr-blue);
