@@ -5,11 +5,11 @@ import style from './Button.module.scss';
 type ButtonType = 'gradient' | 'small' | 'standart';
 
 interface IButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-  styleType: ButtonType;
+  styleType?: ButtonType;
 }
 
 export const Button: FC<IButtonProps> = (props) => {
-  const { children, styleType, className } = props;
+  const { children, styleType = 'gradient', className } = props;
   return (
     <button
       {...props}
