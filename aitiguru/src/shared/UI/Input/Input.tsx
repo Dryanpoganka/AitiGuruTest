@@ -1,8 +1,8 @@
-import type { FC, ReactNode } from 'react';
+import { useId, type FC, type ReactNode } from 'react';
 import styles from './Input.module.scss';
 
 interface IInputProps extends React.ComponentPropsWithoutRef<'input'> {
-  styleType: 'bordered' | 'filled';
+  styleType?: 'bordered' | 'filled';
   label?: string;
   error?: string | ReactNode;
   leftIcon?: ReactNode;
@@ -10,7 +10,7 @@ interface IInputProps extends React.ComponentPropsWithoutRef<'input'> {
 }
 
 export const Input: FC<IInputProps> = ({
-  styleType,
+  styleType = 'bordered',
   label,
   error,
   leftIcon,
@@ -18,6 +18,8 @@ export const Input: FC<IInputProps> = ({
   className,
   ...props
 }) => {
+  const inputId = useId();
+
   const wrapperClass = `${styles.wrapper} ${styleType === 'bordered' ? styles.wrapperBordered : ''}`;
 
   const inputClasses = [
@@ -30,7 +32,11 @@ export const Input: FC<IInputProps> = ({
 
   return (
     <div className={wrapperClass}>
-      {label && <label className={styles.label}>{label}</label>}
+      {label && (
+        <label htmlFor={inputId} className={styles.label}>
+          {label}
+        </label>
+      )}
 
       <div className={styles.inputWrapper}>
         {leftIcon && (
@@ -39,7 +45,7 @@ export const Input: FC<IInputProps> = ({
           </div>
         )}
 
-        <input {...props} className={inputClasses} />
+        <input id={inputId} {...props} className={inputClasses} />
 
         {rightIcon && (
           <div className={`${styles.iconWrapper} ${styles.iconWrapperRight}`}>

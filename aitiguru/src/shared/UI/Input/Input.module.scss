@@ -16,6 +16,8 @@
   line-height: 150%;
   color: $typo-label;
   margin-bottom: 6px;
+  -webkit-font-smoothing: antialiased; /* Для macOS/Chrome/Safari */
+  -moz-osx-font-smoothing: grayscale;
 }
 
 .inputWrapper {
