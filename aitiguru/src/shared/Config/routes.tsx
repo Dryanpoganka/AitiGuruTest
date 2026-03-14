@@ -1,13 +1,13 @@
 import { lazy } from 'react';
 
 const LoginPage = lazy(() => import('@pages/LoginPage'));
-
+const ProductPage = lazy(() => import('@pages/ProductPage'));
 export const ROUTES = {
   LOGIN: '/',
-  REALTY: '/realty',
+  PRODUCT: '/product',
 } as const;
 
 export const routesConfig = [
   { path: ROUTES.LOGIN, element: <LoginPage />, label: 'Логин' },
-  //   { path: ROUTES.REALTY, element: <RealtyPage />, label: "Товары" },
+  { path: ROUTES.PRODUCT, element: <ProductPage />, label: 'Товары' },
 ];

@@ -1,0 +1,11 @@
+.layout {
+  padding: 20px 30px 30px 30px;
+  background: $bg-disabled;
+  min-height: 100dvh;
+  max-width: 1920px;
+}
+
+.content {
+  padding: 30px;
+  background: $bg-layout;
+}
