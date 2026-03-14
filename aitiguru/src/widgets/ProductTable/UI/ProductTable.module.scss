@@ -1,0 +1,54 @@
+.table {
+  width: 100%;
+  margin-bottom: 40px;
+}
+
+.tableHeader {
+  padding: 0px 18px;
+  width: 100%;
+  grid-template-columns:
+    48px
+    minmax(200px, 3fr)
+    1.5fr
+    1.5fr
+    1fr
+    1.2fr
+    120px;
+
+  gap: 12px;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.tableHeaderColumn {
+  font-family: var(--font-family);
+  font-weight: 700;
+  font-size: 16px;
+  color: #b2b3b9;
+  text-align: center;
+}
+
+.tabNameHeader {
+  text-align: start;
+}
+
+.controlWrapper {
+  display: flex;
+  gap: 32px;
+}
+
+.footer {
+  height: 52px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.counter {
+  font-family: var(--second-family);
+  font-weight: 400;
+  font-size: 18px;
+  color: #969b9f;
+  & > span {
+    color: #333;
+  }
+}
