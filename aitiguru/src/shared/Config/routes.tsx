@@ -8,6 +8,6 @@ export const ROUTES = {
 } as const;
 
 export const routesConfig = [
-  { path: ROUTES.LOGIN, element: <LoginPage />, label: 'Логин' },
-  { path: ROUTES.PRODUCT, element: <ProductPage />, label: 'Товары' },
+  { path: ROUTES.LOGIN, element: <LoginPage />, isProtect: false },
+  { path: ROUTES.PRODUCT, element: <ProductPage />, isProtect: true },
 ];
