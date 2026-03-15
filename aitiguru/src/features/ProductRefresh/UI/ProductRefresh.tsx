@@ -1,10 +1,21 @@
 import Refresh from '../assets/Refresh.svg?react';
-
 import styles from './ProductRefresh.module.scss';
 
-export const ProductRefresh = () => {
+interface ProductRefreshProps {
+  onRefresh: () => void;
+  isLoading?: boolean;
+}
+
+export const ProductRefresh = ({
+  onRefresh,
+  isLoading,
+}: ProductRefreshProps) => {
   return (
-    <button className={styles.button}>
+    <button
+      className={`${styles.button} ${isLoading ? styles.spinning : ''}`}
+      onClick={onRefresh}
+      disabled={isLoading}
+    >
       <Refresh />
     </button>
   );
