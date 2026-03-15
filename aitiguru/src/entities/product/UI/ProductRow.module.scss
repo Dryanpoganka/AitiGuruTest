@@ -1,8 +1,7 @@
 .row {
   padding: 0px 18px;
   width: 100%;
-  //   display: grid;
-  place-content: stretch; /* Растягивает сами треки (колонки) */
+  place-content: stretch;
   justify-items: stretch;
   grid-template-columns: 48px 3fr 1.5fr 1.5fr 1fr 1.2fr 120px;
   min-width: 0;

@@ -16,7 +16,7 @@
   line-height: 150%;
   color: $typo-label;
   margin-bottom: 6px;
-  -webkit-font-smoothing: antialiased; /* Для macOS/Chrome/Safari */
+  -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
@@ -26,7 +26,6 @@
   align-items: center;
 }
 
-// Базовые стили для обоих типов
 .input {
   width: 100%;
   font-family: var(--third-family);
@@ -76,7 +75,8 @@
 }
 
 .error {
+  font-family: var(--third-family);
   margin-top: 4px;
   font-size: 16px;
-  color: #9c9c9c;
+  color: $color-error;
 }

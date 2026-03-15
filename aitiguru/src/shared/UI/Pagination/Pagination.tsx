@@ -19,7 +19,6 @@ export const Pagination: FC<IPaginationProps> = ({
     let start = Math.max(1, currentPage - 2);
     let end = Math.min(totalPages, start + 4);
 
-    // Корректировка окна, чтобы всегда было 5 кнопок (если страниц достаточно)
     if (end - start < 4) {
       start = Math.max(1, end - 4);
     }

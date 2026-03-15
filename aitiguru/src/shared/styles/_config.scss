@@ -1,7 +1,6 @@
 $tablet: 768px;
 $desktop: 1024px;
 
-// Mixins для адаптива
 @mixin tablet {
   @media (max-width: #{$tablet}) {
     @content;
@@ -16,42 +15,35 @@ $desktop: 1024px;
 
 $headerHeight: 105px;
 
-/* Шрифты (уже были) */
 $bg-layout: var(--clr-white);
 $bg-disabled: var(--clr-gray-100);
 
-// Typography - Titles
-$typo-title-main: var(--clr-dark-400); // Заголовок страницы товаров
-$typo-title-auth: var(--clr-dark-200); // Заголовок логина
-$typo-subtitle: var(--clr-gray-400); // Подзаголовок логина
+$typo-title-main: var(--clr-dark-400);
+$typo-title-auth: var(--clr-dark-200);
+$typo-subtitle: var(--clr-gray-400);
 
-// Typography - Forms & Content
-$typo-label: var(--clr-dark-200); // Лейблы инпутов
-$typo-label-secondary: var(--clr-gray-600); // Лейбл чекбокса
-$typo-text-secondary: var(--clr-gray-900); // Текст рядом с акцентом
-$typo-placeholder: var(--clr-gray-600); // Плейсхолдеры / Иконки (глаз, крестик)
+$typo-label: var(--clr-dark-200);
+$typo-label-secondary: var(--clr-gray-600);
+$typo-text-secondary: var(--clr-gray-900);
+$typo-placeholder: var(--clr-gray-600);
 $typo-or: var(--clr-gray-200);
 
-// Typography - Admin Table
-$typo-table-head: var(--clr-gray-500); // Заголовки колонок
-$typo-product-name: var(--clr-dark-300); // Название товара
-$typo-product-type: var(--clr-gray-500); // Тип товара
-$typo-price-main: var(--clr-dark-300); // Основная цена
-$typo-price-cents: var(--clr-gray-800); // Копейки
-$typo-vendor: var(--clr-black); // Продавец / Артикул
+$typo-table-head: var(--clr-gray-500);
+$typo-product-name: var(--clr-dark-300);
+$typo-product-type: var(--clr-gray-500);
+$typo-price-main: var(--clr-dark-300);
+$typo-price-cents: var(--clr-gray-800);
+$typo-vendor: var(--clr-black);
 
-// Pagination
 $typo-pagination-text: var(--clr-gray-700);
 $typo-pagination-num: var(--clr-dark-100);
 
-// States
-$color-error: var(--clr-red-500); // Низкая оценка
+$color-error: var(--clr-red-500);
 $color-btn: var(--clr-white);
-$color-btn-alt: var(--clr-btn-text); // Текст кнопки (админка)
+$color-btn-alt: var(--clr-btn-text);
 
-// Borders & Elements
-$border-main: var(--clr-gray-300); // Общие бордеры
-$border-input: var(--clr-gray-200); // Бордеры инпутов / чекбоксов
+$border-main: var(--clr-gray-300);
+$border-input: var(--clr-gray-200);
 $separator-line: var(--clr-gray-200);
 
 $accent-color: var(--clr-blue);
