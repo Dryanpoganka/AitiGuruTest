@@ -1,19 +1,23 @@
+import { Controller, useForm } from 'react-hook-form';
+import { zodResolver } from '@hookform/resolvers/zod';
+
 import { Button } from '@shared/UI/Button/Button';
 import { Checkbox } from '@shared/UI/Checkbox/Checkbox';
 import { Input } from '@shared/UI/Input/Input';
+
+import { loginSchema, type LoginSchema } from '../model/schema';
+import { useLogin } from '../model/useLogin';
 
 import Close from '../assets/Close.svg?react';
 import Eyes from '../assets/Eyes.svg?react';
 import Lock from '../assets/Lock.svg?react';
 import User from '../assets/User.svg?react';
 
-import { zodResolver } from '@hookform/resolvers/zod';
-import { loginSchema, type LoginSchema } from '../model/schema';
-
 import styles from './LoginForm.module.scss';
-import { Controller, useForm } from 'react-hook-form';
 
 export const LoginForm = () => {
+  const { mutate: login, isPending, error } = useLogin();
+  console.log(error);
   const {
     control,
     handleSubmit,
@@ -24,7 +28,7 @@ export const LoginForm = () => {
   });
 
   const onSubmit = (data: LoginSchema) => {
-    console.log(data);
+    login(data);
   };
 
   return (
@@ -37,6 +41,7 @@ export const LoginForm = () => {
             <Input
               {...field}
               label="Логин"
+              disabled={isPending}
               error={errors.login?.message}
               leftIcon={<User />}
               rightIcon={<Close />}
@@ -52,6 +57,7 @@ export const LoginForm = () => {
               {...field}
               type="password"
               label="Пароль"
+              disabled={isPending}
               error={errors.password?.message}
               leftIcon={<Lock />}
               rightIcon={<Eyes />}
@@ -59,7 +65,9 @@ export const LoginForm = () => {
           )}
         />
       </div>
-
+      {error && (
+        <div className={styles.serverError}>{'Неверный логин или пароль'}</div>
+      )}
       <Controller
         name="rememberMe"
         control={control}
@@ -68,11 +76,13 @@ export const LoginForm = () => {
             label="Запомнить данные"
             checked={value}
             onChange={onChange}
+            disabled={isPending}
           />
         )}
       />
-      <Button type="submit" className={styles.button}>
-        Войти
+
+      <Button type="submit" className={styles.button} disabled={isPending}>
+        {isPending ? 'Вход...' : 'Войти'}
       </Button>
     </form>
   );

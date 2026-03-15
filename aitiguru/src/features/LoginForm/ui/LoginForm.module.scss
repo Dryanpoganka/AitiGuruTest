@@ -14,3 +14,9 @@
 .button {
   width: 100%;
 }
+.serverError {
+  font-family: var(--third-family);
+  margin-top: 4px;
+  font-size: 16px;
+  color: $color-error;
+}
