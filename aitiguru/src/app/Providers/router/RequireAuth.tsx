@@ -18,7 +18,15 @@ export const RequireAuth = ({ children }: RequireAuthProps) => {
   }
 
   if (!isAuth) {
-    return <Navigate to={ROUTES.LOGIN} state={{ from: location }} replace />;
+    return (
+      <Navigate
+        to={ROUTES.LOGIN}
+        state={{
+          from: { pathname: location.pathname, search: location.search },
+        }}
+        replace
+      />
+    );
   }
 
   return children;

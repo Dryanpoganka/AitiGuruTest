@@ -7,7 +7,6 @@ import Close from '../assets/Close.svg?react';
 
 export const ProductModal = () => {
   const { isModalOpen, toggleModal } = useProductStore();
-  console.log(isModalOpen);
   if (!isModalOpen) return null;
 
   return (

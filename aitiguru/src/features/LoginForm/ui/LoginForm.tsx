@@ -14,10 +14,10 @@ import Lock from '../assets/Lock.svg?react';
 import User from '../assets/User.svg?react';
 
 import styles from './LoginForm.module.scss';
+import { useState } from 'react';
 
 export const LoginForm = () => {
   const { mutate: login, isPending, error } = useLogin();
-  console.log(error);
   const {
     control,
     handleSubmit,
@@ -27,8 +27,14 @@ export const LoginForm = () => {
     defaultValues: { login: '', password: '', rememberMe: false },
   });
 
+  const [isTypePassword, setIsTypePassword] = useState(true);
+
   const onSubmit = (data: LoginSchema) => {
     login(data);
+  };
+
+  const togglePasswordType = () => {
+    setIsTypePassword((prev) => !prev);
   };
 
   return (
@@ -55,12 +61,14 @@ export const LoginForm = () => {
           render={({ field }) => (
             <Input
               {...field}
-              type="password"
+              type={isTypePassword ? 'password' : 'text'}
               label="Пароль"
               disabled={isPending}
               error={errors.password?.message}
               leftIcon={<Lock />}
-              rightIcon={<Eyes />}
+              rightIcon={
+                <Eyes className={styles.eye} onClick={togglePasswordType} />
+              }
             />
           )}
         />

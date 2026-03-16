@@ -11,12 +11,14 @@ interface ImageUploaderProps {
   value?: File | string | null;
   onChange: (file: File | null) => void;
   error?: string;
+  label?: string;
 }
 
 export const ImageUploader = ({
   value,
   onChange,
   error,
+  label,
 }: ImageUploaderProps) => {
   const [preview, setPreview] = useState<string | null>(
     value instanceof File
@@ -62,7 +64,7 @@ export const ImageUploader = ({
 
   return (
     <div className={styles.container}>
-      <label className={styles.label}>Превью товара (Thumbnail)</label>
+      <label className={styles.label}>{label}</label>
 
       <div
         className={`${styles.dropzone} ${error ? styles.error : ''}`}

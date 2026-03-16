@@ -66,6 +66,7 @@ export const AddProductForm = ({ onSuccess }: { onSuccess?: () => void }) => {
         control={control}
         render={({ field: { onChange, value }, fieldState: { error } }) => (
           <ImageUploader
+            label="Превью товара"
             value={value}
             onChange={onChange}
             error={error?.message}

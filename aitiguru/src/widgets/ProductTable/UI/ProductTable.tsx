@@ -24,7 +24,6 @@ export const ProductTable = () => {
     order,
     searchTerm,
   );
-  console.log(isLoading);
   return (
     <div className={styles.container}>
       {/* Прогресс-бар при подгрузке (isFetching поймает и первый запуск, и пагинацию) */}
@@ -53,13 +52,13 @@ export const ProductTable = () => {
             {/* Делаем заголовки кликабельными */}
             <th
               onClick={() => setSorting('rating')}
-              className={styles.tableHeaderColumn}
+              className={`${styles.tableHeaderColumn} ${styles.sortingHeader}`}
             >
               Оценка
             </th>
             <th
               onClick={() => setSorting('price')}
-              className={styles.tableHeaderColumn}
+              className={`${styles.tableHeaderColumn} ${styles.sortingHeader}`}
             >
               Цена, ₽
             </th>
