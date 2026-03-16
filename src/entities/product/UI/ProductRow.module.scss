@@ -1,0 +1,97 @@
+.row {
+  padding: 0px 18px;
+  width: 100%;
+  place-content: stretch;
+  justify-items: stretch;
+  grid-template-columns: 48px 3fr 1.5fr 1.5fr 1fr 1.2fr 120px;
+  min-width: 0;
+  gap: 12px;
+  align-items: center;
+  height: 71px;
+  border-top: 1px solid #e2e2e2;
+}
+
+.leftWrapper {
+  display: flex;
+  gap: 18px;
+}
+
+.imgProductWrapper {
+}
+
+.imgProductPlaceholder {
+  border: 1px solid #ececeb;
+  border-radius: 8px;
+  width: 48px;
+  background: #c4c4c4;
+  height: 48px;
+}
+
+.imgProduct {
+  object-fit: cover;
+  height: 48px;
+  width: 48px;
+}
+
+.productInfoWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.productName {
+  font-family: var(--font-family);
+  font-weight: 700;
+  font-size: 16px;
+  color: #161919;
+  line-height: 11px;
+  margin-bottom: 10px;
+}
+
+.productType {
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 14px;
+  color: #b2b3b9;
+}
+
+.productVendor {
+  font-family: var(--second-family);
+  font-weight: 700;
+  font-size: 16px;
+  text-align: center;
+  color: #000;
+}
+
+.productArticle {
+  font-family: var(--second-family);
+  font-weight: 400;
+  font-size: 16px;
+  text-align: center;
+  color: #000;
+}
+
+.productPrice {
+  font-family: var(--second-family);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 110%;
+  text-align: center;
+  color: #222;
+
+  & > span {
+    color: #999;
+  }
+}
+
+.productRating {
+  font-family: var(--second-family);
+  font-weight: 400;
+  font-size: 16px;
+  text-align: center;
+  color: #000;
+}
+
+.badReview {
+  color: $color-error;
+}

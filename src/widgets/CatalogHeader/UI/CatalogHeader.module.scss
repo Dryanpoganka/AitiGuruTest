@@ -1,0 +1,19 @@
+.header {
+  height: $headerHeight;
+  width: 100%;
+  background: $bg-layout;
+  border-radius: 10px;
+  padding: 0px 30px;
+
+  display: flex;
+  align-items: center;
+  gap: 310px;
+  margin-bottom: 30px;
+}
+
+.title {
+  font-family: var(--font-family);
+  font-weight: 700;
+  font-size: 24px;
+  color: $typo-title-main;
+}
