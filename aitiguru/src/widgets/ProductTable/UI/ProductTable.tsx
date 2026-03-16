@@ -1,32 +1,68 @@
 import { ProductRow } from '@entities/product';
-import { useProducts } from '@entities/product/api/productApi';
-import { useProductStore } from '@entities/product/model/store';
+import { useProducts } from '@entities/product';
+import { useProductStore } from '@entities/product';
 import { AddToCart } from '@features/AddToCart';
 import { ProductAction } from '@features/ProductAction';
 import { Pagination } from '@shared/UI/Pagination/Pagination';
 import styles from './ProductTable.module.scss';
+import { Checkbox } from '@shared/UI/Checkbox/Checkbox';
 
 export const ProductTable = () => {
-  const { currentPage, setCurrentPage, selectedIds, toggleSelect } =
-    useProductStore();
-  const { data, isLoading, isFetching } = useProducts(currentPage);
+  const {
+    currentPage,
+    setCurrentPage,
+    sortBy,
+    order,
+    selectedIds,
+    searchTerm,
+    toggleSelect,
+    setSorting,
+  } = useProductStore();
+  const { data, isLoading, isFetching, progress } = useProducts(
+    currentPage,
+    sortBy,
+    order,
+    searchTerm,
+  );
   console.log(isLoading);
   return (
     <div className={styles.container}>
       {/* Прогресс-бар при подгрузке (isFetching поймает и первый запуск, и пагинацию) */}
-      {(isLoading || isFetching) && <div className={styles.progressBar} />}
+      {(isLoading || isFetching) && (
+        <div className={styles.progressBarContainer}>
+          <div
+            className={styles.progressBarFill}
+            style={{ width: `${progress}%` }}
+          />
+        </div>
+      )}
 
       <table className={styles.table}>
         <thead>
           <tr className={styles.tableHeader}>
             <th>
-              <input type="checkbox" />
+              <Checkbox label="" checked={false} onChange={() => {}} />
             </th>
-            <th className={styles.tabNameHeader}>Наименование</th>
-            <th>Вендор</th>
-            <th>Артикул</th>
-            <th>Оценка</th>
-            <th>Цена, ₽</th>
+            <th
+              className={`${styles.tabNameHeader} ${styles.tableHeaderColumn}`}
+            >
+              Наименование
+            </th>
+            <th className={styles.tableHeaderColumn}>Вендор</th>
+            <th className={styles.tableHeaderColumn}>Артикул</th>
+            {/* Делаем заголовки кликабельными */}
+            <th
+              onClick={() => setSorting('rating')}
+              className={styles.tableHeaderColumn}
+            >
+              Оценка
+            </th>
+            <th
+              onClick={() => setSorting('price')}
+              className={styles.tableHeaderColumn}
+            >
+              Цена, ₽
+            </th>
             <th></th>
           </tr>
         </thead>

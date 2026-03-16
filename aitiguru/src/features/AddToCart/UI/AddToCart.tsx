@@ -4,7 +4,7 @@ import Plus from '../assets/PlusIcon.svg?react';
 import type { FC } from 'react';
 
 interface AddToCartProps {
-  productId: number; // Добавляем сюда
+  productId: number;
 }
 
 export const AddToCart: FC<AddToCartProps> = () => {

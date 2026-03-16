@@ -1,4 +1,4 @@
-import { Navigate, useLocation } from 'react-router-dom';
+import { Navigate } from 'react-router-dom';
 import { useUserStore } from '@entities/user/index';
 import { ROUTES } from '@shared/Config/routes';
 import type { JSX } from 'react';

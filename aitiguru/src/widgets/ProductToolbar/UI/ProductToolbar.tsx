@@ -1,12 +1,16 @@
 import { ProductRefresh } from '@features/ProductRefresh';
 import styles from './ProductToolbar.module.scss';
 import { AddProduct } from '@features/AddProduct';
-import { useProducts } from '@entities/product/api/productApi';
-import { useProductStore } from '@entities/product/model/store';
+import { useProducts, useProductStore } from '@entities/product';
 
 export const ProductToolbar = () => {
-  const { currentPage } = useProductStore();
-  const { isFetching, refetch } = useProducts(currentPage);
+  const { currentPage, sortBy, order, searchTerm } = useProductStore();
+  const { isFetching, refetch } = useProducts(
+    currentPage,
+    sortBy,
+    order,
+    searchTerm,
+  );
 
   return (
     <div className={styles.wrapper}>

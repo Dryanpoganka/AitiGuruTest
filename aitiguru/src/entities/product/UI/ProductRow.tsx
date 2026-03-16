@@ -1,4 +1,3 @@
-// src/entities/product/ui/ProductRow/ProductRow.tsx
 import { type FC, type ReactNode } from 'react';
 import { Checkbox } from '@shared/UI/Checkbox/Checkbox';
 import { type Product } from '../model/types';
